@@ -1,47 +1,46 @@
-.container{
-    max-width: 100%;
-    box-sizing: border-box;
-    margin: 0;
-    
+/* The Masonry Container */
+.masonry {
+  margin: 0.5em auto;
+  max-width: 100%;
+  column-gap: 0.5em;
 }
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 4px;
+
+/* The Masonry Brick */
+.item {
+  background: #fff;
+  padding: 0.5em;
+  margin: 0 0 1em;
+  border-radius: 5px;
+}
+.item:hover{
+  background-color: rgb(221, 221, 221);
+  cursor: zoom-in;
+}
+.item img{
+  width: 100%;
+  border-radius: 5px;
+}
+.item i{
+  color:gray;
+}
+
+/* Masonry on large screens */
+@media only screen and (min-width: 1024px) {
+  .masonry {
+    column-count: 4;
   }
-  .column {
-    flex: 23%;
-    max-width: 25%;
-    padding: 1%;
+}
+
+/* Masonry on medium-sized screens */
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+  .masonry {
+    column-count: 3;
   }
-  .card{
-    width: 100%;
-    border-radius: 5px;
-    margin-top: 8px; 
-    padding: 4%;
+}
+
+/* Masonry on small screens */
+@media only screen and (max-width: 767px) and (min-width: 540px) {
+  .masonry {
+    column-count: 2;
   }
-  .card:hover{
-    background-color: rgb(226, 226, 226);
-    cursor: zoom-in;
-  }
-  .card img{
-    width: 100%;
-    border-radius: 5px;
-    vertical-align: center;
-  }
-  .card .material-icons{
-      color: rgb(179, 179, 179);
-  }
-  @media (max-width: 800px) {
-    .column {
-      flex: 50%;
-      max-width: 50%;
-    }
-  }
-  
-  @media (max-width: 600px) {
-    .column {
-      flex: 100%;
-      max-width: 100%;
-    }
-  }
+}
