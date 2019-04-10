@@ -8,7 +8,7 @@ class App extends Component {
       <div className="App">
         <header>
           <div><Navbar /></div>
-          <div> <Dashboard /></div>
+         <Dashboard />
         </header>
       </div>
     );
