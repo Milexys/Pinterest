@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import Unsplash from 'unsplash-js';
-import InfiniteScroll from 'react-infinite-scroll-component'
+import InfiniteScroll from 'react-infinite-scroll-component';
+import Modal from '../modal/Modal';
 import './dashboard.css';
+import Pictures from './Images'
 
 const unsplash = new Unsplash({
     applicationId: "ded631ac9ff44d2e2d3e36f72cb1e95229e65a75eee4614d4ddec04921d34f88",
@@ -15,6 +17,7 @@ class Dashboard extends Component {
             images: [],
             start: 1,
             count: 20,
+            isShowing: false,
         }
 
     }
@@ -27,7 +30,7 @@ class Dashboard extends Component {
             let imgURL = []
             for (let i = 0; i < 20; i ++){
                 let img = data[i]
-                imgURL.push(img.urls.thumb)
+                imgURL.push(img.urls.small)
             }
             this.setState({
                 ...this.state,
@@ -35,7 +38,6 @@ class Dashboard extends Component {
             })
         })
     }
-
     handleMore = () => {
         const { start, count } = this.state
         let start1 = start + count;
@@ -49,7 +51,7 @@ class Dashboard extends Component {
             let imgNewURL = [];
             for (let i = 0; i < 20; i++){
                 let img = newData[i]
-                imgNewURL.push(img.urls.thumb)
+                imgNewURL.push(img.urls.small)
             }
             this.setState({
                 ...this.state,
@@ -58,27 +60,43 @@ class Dashboard extends Component {
         })
       console.log(this.state.images)
     }
-    openModal(){
-        
+
+    openModalHandler = (i) => {
+        this.setState({
+            isShowing: i.url
+        });
     }
+
+    closeModalHandler = () => {
+        this.setState({
+            isShowing: false
+        });
+    }
+
+    getImages(){
+        const showImages = this.state.images.map((image, i) => {
+            return (
+                <Pictures
+                key={i}
+                pushClick={this.openModalHandler}
+                url={image}>
+                </Pictures>
+            )
+        })
+        return showImages;
+    }
+
     render(){
         return (
             <div className="masonry">
+            {this.state.isShowing && <Modal pushClick={this.closeModalHandler} imgUrl={this.state.isShowing}></Modal>}
                 <InfiniteScroll
                 dataLength={this.state.images.length}
                 next={this.handleMore}
                 hasMore={true}
                 loader={<h4 style={{textAlign: "center"}}>Loading...</h4>}
-                >
-                      {this.state.images.map(image => {
-                        return (
-                            <div className="item" key={image.id}>
-                                <img className="image" src={image} onClick={this.openModal} alt="img"/>
-                                <i className="material-icons">more_horiz</i>
-                           </div>
-                        )
-                    })
-                    }
+                >         
+                {this.state.images && this.getImages()}
                 </InfiniteScroll>
             </div>
         ) 

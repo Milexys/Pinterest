@@ -4,7 +4,7 @@ class FollowButton extends Component {
     render (){
         return (
             <div className="followButton">
-                <button>Siguiendo</button>
+                <button className="siguiendo">Siguiendo</button>
             </div>
         )
     }
