@@ -1,30 +1,23 @@
 import React from 'react';
 import './layout.css';
-import Buttons from './Buttons';
-import FollowButton from './FollowButton'
 
 const Navbar = () => {
     return (
-        <div className="navbar" style={{top: '0'}}>
+        <div className="navbar">
             <div className="imgLogo">
-                <img src="https://cdn.freebiesupply.com/logos/large/2x/pinterest-1-logo-png-transparent.png" alt=""/>
+            <i className='fab fa-pinterest'></i>
             </div>
             <div className="inputSearch">
                 <input type="text" placeholder="Buscar" />
+                <i className="material-icons">search</i>
             </div>
-            <Buttons />
-            <FollowButton />
-            <div className="btn-perfil">
-                <a href='/perfil'style={{color: 'gray', fontWeight: 'bold'}}>Milexys<i className='fas fa-chevron-down' style={{color: 'gray', fontSize:'14px'}}></i></a>
-            </div>
-            <div className="btn-chat">
-                <a href='/chat'><i className='fas fa-comment-dots' style={{color: 'gray', fontSize:'24px'}}></i></a>
-            </div>
-            <div className="btn-notif">
-                <a href='/notif'><i className='fas fa-bell' style={{color: 'gray', fontSize:'24px'}}></i></a>
-            </div>
-            <div className="btn-menu">
-                <a href='/menu'><i className="material-icons" style={{color: 'gray', fontSize:'24px'}}>more_horiz</i></a>
+            <div className="buttons">
+                <a href='/inicio' className="btn" style={{color:'black'}}>Inicio</a> 
+                <a href='/siguiendo' className="btn">Siguiendo</a> 
+                <a href='/perfil' className="btn">Milexys<i className='fas fa-chevron-down' style={{fontSize:'14px'}}></i></a>            
+                <a href='/chat' className="btn" ><i className='fas fa-comment-dots'></i></a>
+                <a href='/notif' className="btn"><i className='fas fa-bell'></i></a>
+                <a href='/menu' className="btn"><i className="material-icons">more_horiz</i></a>
             </div>
         </div>
     )
