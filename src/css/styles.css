@@ -191,6 +191,101 @@ body {
     column-count: 2;
   }
 }
+.container-modal {
+  width: 100%;
+  height: auto;
+  background: white;
+}
+.container-modal .back {
+  position: fixed;
+  top: 80px;
+  left: 1.5em;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-modal .back:hover {
+  background: #EFEFEF;
+  cursor: pointer;
+}
+.container-modal .back img {
+  width: 20px;
+}
+.container-modal .flex {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.container-modal .flex .modal {
+  width: auto;
+  height: auto;
+  background: white;
+  margin-top: 1em;
+  display: flex;
+  border-radius: 20px;
+  -webkit-box-shadow: 2px 0px 23px -7px rgba(0, 0, 0, 0.52);
+  -moz-box-shadow: 2px 0px 23px -7px rgba(0, 0, 0, 0.52);
+  box-shadow: 2px 0px 23px -7px rgba(0, 0, 0, 0.52);
+}
+.container-modal .flex .modal .imagen {
+  width: 50%;
+  height: auto;
+}
+.container-modal .flex .modal .imagen img {
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.container-modal .flex .modal .modal-body {
+  width: 50%;
+  height: auto;
+}
+.container-modal .flex .modal .modal-body .header {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.container-modal .flex .modal .modal-body .header .iconos {
+  width: 100%;
+  display: flex;
+  padding: 0.5em;
+}
+.container-modal .flex .modal .modal-body .header .iconos div {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.container-modal .flex .modal .modal-body .header .iconos div img {
+  width: 20px;
+}
+.container-modal .flex .modal .modal-body .header .iconos div:hover {
+  background: #EFEFEF;
+  cursor: pointer;
+}
+.container-modal .flex .modal .modal-body .header button {
+  background: #E60023;
+  color: white;
+  padding: 0.5em 1.5em;
+  border-radius: 5px;
+  border: none;
+  margin: 1em;
+  font-weight: 700;
+}
+.container-modal .flex .modal .modal-body .header button:hover {
+  cursor: pointer;
+}
+
 .container {
   max-width: 1200px;
   width: 100vw;

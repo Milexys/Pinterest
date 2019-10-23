@@ -1,0 +1,92 @@
+@import 'variables';
+.container-modal{
+    width: 100%;
+    height: auto;
+    background: white;
+
+    .back{
+        position: fixed;
+        top: 80px;
+        left: 1.5em;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        @include centrado;
+        &:hover{
+            background: $lightGray;
+            cursor: pointer;
+        }
+        img{
+            width: 20px;
+        }
+    }
+    .flex{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        .modal{
+            width: auto;
+            height: auto;
+            background: white;
+            margin-top: 1em;
+            display: flex;
+            border-radius: 20px;
+            -webkit-box-shadow: 2px 0px 23px -7px rgba(0,0,0,0.52);
+            -moz-box-shadow: 2px 0px 23px -7px rgba(0,0,0,0.52);
+            box-shadow: 2px 0px 23px -7px rgba(0,0,0,0.52);
+            .imagen{
+                width: 50%;
+                height: auto;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    border-top-left-radius: 20px;
+                    border-bottom-left-radius: 20px;
+                }
+            }
+            .modal-body{
+                width: 50%;
+                height: auto;
+                .header{
+                    width: 100%;
+                    height: 60px;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    .iconos{
+                        width: 100%;
+                        display: flex;
+                        padding: 0.5em;
+                        div{
+                            width: 40px;
+                            height: 40px;
+                            @include centrado;
+                            border-radius: 50%;
+                            img{
+                                width: 20px;
+                            }
+                            &:hover{
+                                background: $lightGray;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                    button{
+                        background: $red;
+                        color: white;
+                        padding: 0.5em 1.5em;
+                        border-radius: 5px;
+                        border: none;
+                        margin: 1em;
+                        font-weight: 700;
+                        &:hover{
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -88,8 +88,8 @@ class Dashboard extends Component {
     render() {
         return (
             <div className="container">
+                 {this.state.isShowing && <Modal pushClick={this.closeModalHandler} imgUrl={this.state.isShowing}></Modal>}
                 <div className="masonry">
-                    {this.state.isShowing && <Modal pushClick={this.closeModalHandler} imgUrl={this.state.isShowing}></Modal>}
                     <InfiniteScroll
                         dataLength={this.state.images.length}
                         next={this.handleMore}
