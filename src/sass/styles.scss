@@ -1,13 +1,12 @@
 @import 'variables';
 @import 'navbar';
 @import 'global';
+@import 'dashboard';
 
 .container{
     max-width: 1200px;
     width: 100vw;
     height: 100vh;
-
-    p{
-        color: $darkGray;
-    }
+    margin-top: 55px ;
+    padding: 0.5em;
 }

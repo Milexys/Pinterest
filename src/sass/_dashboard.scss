@@ -1,0 +1,94 @@
+@import 'variables';
+.masonry {
+    margin: 1em auto;
+    max-width: 100%;
+    column-gap: 0.2em;
+
+    .item{
+        position: relative;
+        background: #fff;
+        padding: 0.3em;
+        border-radius: 10px;
+        &:hover{
+            cursor: zoom-in;
+            opacity: 0.8;
+            .hidden-buttons{
+                visibility: visible;
+            }
+        }
+        img{
+            width: 100%;
+            border-radius: 10px;
+        }
+        .hidden-buttons{
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: auto;
+            width: 100%;
+            height: 100%;
+            visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            button{
+                background: $red;
+                color: white;
+                padding: 0.5em 1.5em;
+                border-radius: 20px;
+                border: none;
+                margin: 1em;
+                opacity: 1;
+                &:hover{
+                    cursor: pointer;
+                    background: rgb(173, 12, 12);
+                }
+            }
+            .spacer{
+                flex: 1;
+            }
+            .iconos{
+                width: 100%;
+                display: flex;
+                justify-content: flex-end;
+                margin: 1em;
+                div{
+                    background: #FAF8F7;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    margin: 0.3em;
+                    @include centrado;
+                    img{
+                        width: 15px;
+                        opacity: 1;
+                    }
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+              
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .masonry {
+      column-count: 5;
+    }
+  }
+  
+  /* Masonry on medium-sized screens */
+  @media only screen and (max-width: 1023px) and (min-width: 768px) {
+    .masonry {
+      column-count: 4;
+    }
+  }
+  
+  /* Masonry on small screens */
+  @media only screen and (max-width: 767px) and (min-width: 540px) {
+    .masonry {
+      column-count: 2;
+    }
+  }

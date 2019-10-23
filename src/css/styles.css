@@ -8,6 +8,7 @@
   border-bottom: 1px solid #EFEFEF;
   z-index: 10;
   display: flex;
+  background: white;
 }
 .navbar .imgLogo {
   width: 5%;
@@ -61,13 +62,16 @@
   width: 40%;
   height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 .navbar .buttons a {
   color: #8E8E8E;
   text-decoration: none;
-  padding: 0.5em 1em;
+  padding: 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .navbar .buttons a:hover {
   border-radius: 25px;
@@ -77,8 +81,8 @@
   font-size: 25px;
 }
 .navbar .buttons a div {
-  width: 25px;
-  height: 25px;
+  width: 24px;
+  height: 24px;
   background: #8E8E8E;
   border-radius: 50%;
   display: flex;
@@ -96,13 +100,103 @@ body {
   font-size: 1em;
 }
 
+.masonry {
+  margin: 1em auto;
+  max-width: 100%;
+  column-gap: 0.2em;
+}
+.masonry .item {
+  position: relative;
+  background: #fff;
+  padding: 0.3em;
+  border-radius: 10px;
+}
+.masonry .item:hover {
+  cursor: zoom-in;
+  opacity: 0.8;
+}
+.masonry .item:hover .hidden-buttons {
+  visibility: visible;
+}
+.masonry .item img {
+  width: 100%;
+  border-radius: 10px;
+}
+.masonry .item .hidden-buttons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.masonry .item .hidden-buttons button {
+  background: #E60023;
+  color: white;
+  padding: 0.5em 1.5em;
+  border-radius: 20px;
+  border: none;
+  margin: 1em;
+  opacity: 1;
+}
+.masonry .item .hidden-buttons button:hover {
+  cursor: pointer;
+  background: #ad0c0c;
+}
+.masonry .item .hidden-buttons .spacer {
+  flex: 1;
+}
+.masonry .item .hidden-buttons .iconos {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin: 1em;
+}
+.masonry .item .hidden-buttons .iconos div {
+  background: #FAF8F7;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 0.3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.masonry .item .hidden-buttons .iconos div img {
+  width: 15px;
+  opacity: 1;
+}
+.masonry .item .hidden-buttons .iconos div:hover {
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 1024px) {
+  .masonry {
+    column-count: 5;
+  }
+}
+/* Masonry on medium-sized screens */
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+  .masonry {
+    column-count: 4;
+  }
+}
+/* Masonry on small screens */
+@media only screen and (max-width: 767px) and (min-width: 540px) {
+  .masonry {
+    column-count: 2;
+  }
+}
 .container {
   max-width: 1200px;
   width: 100vw;
   height: 100vh;
-}
-.container p {
-  color: #8E8E8E;
+  margin-top: 55px;
+  padding: 0.5em;
 }
 
 /*# sourceMappingURL=styles.css.map */

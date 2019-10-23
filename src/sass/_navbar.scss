@@ -1,10 +1,4 @@
 @import 'variables';
-
-@mixin centrado {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 .navbar{
     position: fixed;
     top: 0;
@@ -14,6 +8,7 @@
     border-bottom: 1px solid $lightGray;
     z-index: 10;
     display: flex;
+    background: white;
 
     .imgLogo{
         width: 5%;
@@ -62,11 +57,15 @@
     .buttons{
         width: 40%;
         height: 100%;
-        @include centrado;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;    
+      
         a{
             color: $darkGray;
             text-decoration: none;
-            padding: 0.5em 1em;
+            padding: 0.5em;
+            @include centrado;     
             &:hover{
                 border-radius: 25px;
                 background: $lightGray;

@@ -2,3 +2,8 @@ $darkGray: #8E8E8E;
 $lightGray: #EFEFEF;
 $black: #000;
 $red: #E60023;
+@mixin centrado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
